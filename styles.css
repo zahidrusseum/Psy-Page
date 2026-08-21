@@ -1,0 +1,1296 @@
+/* 1. RESET BÁSICO Y FUENTE */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Evita que el header fijo tape el inicio de la sección */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+/* 2. ESTILOS DEL HEADER (NAVBAR) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para separar del fondo */
+}
+.logo h2 {
+    color: #2c3e50;
+    font-size: 1.15rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem; /* Separación más amplia entre apartados */
+    list-style: none;
+}
+.nav-links a {
+   text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.2rem;
+    transition: color 0.2s ease;
+}
+.nav-links a:hover {
+    color: #2e7d32;
+}
+/* 3. BOTÓN DESTACADO AGENDAR */
+.btn-agendar {
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+.btn-agendar:hover {
+    background-color: #1b5e20;
+}
+/* 4. ADAPTACIÓN RESPONSIVE MEJORADA */
+
+/* Punto intermedio (laptops pequeñas / tablets horizontales) */
+
+/* Modo vertical (tablets / móviles) - Activado a los 900px para evitar el empalme */
+@media (max-width: 1024px) {
+
+    /* Header alineado en una sola fila */
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3%;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.6rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    /* Oculta el botón verde del header en pantallas reducidas */
+    .header-container .btn-agendar,
+    .btn-agendar-header {
+        display: none !important;
+    }
+
+    /* Hero Responsive */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 5%;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+}
+/* 5. HERO SECTION */
+.hero {
+    background-color: #ffffff;
+    padding: 3rem 5%;
+}
+
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    font-size: 2.1rem;
+    color: #1a252f;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #5a6578;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+.btn-secondary {
+    border: 2px solid #cbd5e1;
+    color: #334155;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #2e7d32;
+    color: #2e7d32;
+}
+
+.hero-features {
+    display: flex;
+    gap: 1.2rem;
+    border-top: 1px solid #edf2f7;
+    padding-top: 1.8rem;
+    margin-top: 1rem;
+}
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    flex: 1;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    background-color: #ffffff;
+    padding: 0.4rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.feature-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.feature-info strong {
+    font-size: 0.88rem;
+    color: #1e293b;
+}
+
+.feature-info span {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item strong {
+    font-size: 0.95rem;
+    color: #1a252f;
+}
+
+.feature-item span {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Adaptación responsive */
+@media (max-width: 800px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+}
+/* NUEVA REGLA PARA LA IMAGEN COMPACTA DENTRO DEL TEXTO */
+.hero-image-compact {
+    display: none; /* Se oculta en pantallas grandes */
+}
+
+/* Reglas base para la imagen (puedes dejarlas como estaban) */
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ADAPTACIÓN RESPONSIVE MEJORADA */
+@media (max-width: 800px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem; /* Menor separación */
+    }
+
+    /* Ocultamos la columna de imagen base */
+    .hero-image {
+        display: none;
+    }
+
+    /* Mostramos y ajustamos la imagen compacta dentro del texto */
+    .hero-image-compact {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-image-compact img {
+        width: 100%;
+        max-width: 320px; /* Un poco más pequeña para compactar */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+}
+/* 6. SECCIÓN SOBRE MÍ */
+.about {
+    background-color: #f8fafc;
+    padding: 5rem 5%;
+    border-top: 1px solid #e2e8f0;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.badge-sub {
+    color: #2e7d32;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #1a252f;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #5a6578;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.credentials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #ffffff;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.cred-icon {
+    font-size: 1.4rem;
+    background-color: #e8f5e9;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credential-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #1e293b;
+    margin-bottom: 0.2rem;
+}
+
+.credential-item p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Responsivo para Sobre Mí */
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .credential-item {
+        text-align: left;
+    }
+}
+.credential-item {
+    display: flex;
+    align-items: center; /* Alinea icono y texto al centro vertical */
+    gap: 1.2rem;
+    background-color: #ffffff;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.cred-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Impide que el icono se deforme o se empalme */
+}
+
+.cred-icon i {
+    font-size: 1.2rem;
+    color: #2e7d32;
+}
+/* 7. SECCIÓN SERVICIOS */
+.services {
+    padding: 5rem 5%;
+    background-color: #ffffff;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.services-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.services-header h2 {
+    font-size: 2rem;
+    color: #1a252f;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.services-header p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #e8f5e9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.service-icon i {
+    font-size: 1.3rem;
+    color: #2e7d32;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+/* 8. SECCIÓN PREGUNTAS FRECUENTES */
+.faq {
+    padding: 5rem 5%;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.faq-header h2 {
+    font-size: 2rem;
+    color: #1a252f;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.faq-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 1.8rem;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    padding: 1.8rem;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.faq-item h3 {
+    font-size: 1.05rem;
+    color: #1e293b;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.faq-item h3 i {
+    color: #2e7d32;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Ajuste pantalla chica */
+@media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* 9. SECCIÓN CONTACTO Y FOOTER */
+.contact {
+    padding: 5rem 5%;
+    background-color: #ffffff;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: #1a252f;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: 1.2rem;
+    color: #2e7d32;
+}
+
+.contact-card strong {
+    display: block;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.contact-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 0.9rem 1.6rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc57;
+}
+
+/* Formulario */
+.contact-form-wrapper {
+    flex: 1;
+    background-color: #f8fafc;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form h3 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2e7d32;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 2.5rem 5%;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+.footer-container p {
+    margin-bottom: 0.4rem;
+}
+
+.footer-legal {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact-form-wrapper {
+        width: 100%;
+    }
+}/* ==========================================
+   ESTILOS SECCIÓN SOBRE MÍ
+   ========================================== */
+.about {
+    padding: 5rem 8%;
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.exp-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.exp-text {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.about-lead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Rejilla de Credenciales */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin: 2rem 0;
+}
+
+.credential-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #2e7d32;
+}
+
+.cred-icon {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.cred-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+
+.cred-text p {
+    font-size: 0.82rem;
+    color: #666666;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Adaptación para Pantallas Móviles */
+@media (max-width: 800px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0;
+}
+/* ==========================================
+   SECCIÓN ESPECIALIDADES Y ENFOQUE
+   ========================================== */
+.specialty-section {
+    padding: 4rem 8%;
+    background-color: #f8f9fa;
+}
+
+.specialty-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.specialty-block {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
+}
+
+.specialty-block h3 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.specialty-block h3 i {
+    color: #2e7d32;
+}
+
+/* Enfoque Terapéutico */
+.tag-list-check {
+    list-style: none;
+    padding: 0;
+}
+
+.tag-list-check li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+.tag-list-check li i {
+    color: #2e7d32;
+}
+
+/* Tipos de Consulta */
+.consult-type-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.consult-type-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.consult-type-list li i {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-top: 0.2rem;
+}
+
+.consult-type-list strong {
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.consult-type-list p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Pacientes */
+.sub-block-title {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.patient-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge-patient {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Condiciones Tratadas */
+.full-width-block {
+    grid-column: 1 / -1;
+}
+
+.conditions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tag-condition {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ced4da;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    transition: all 0.2s ease;
+}
+
+.tag-condition:hover {
+    border-color: #2e7d32;
+    color: #2e7d32;
+    background-color: #f1f8e9;
+}
+.specialty-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.full-width-block {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+    .specialty-container {
+        grid-template-columns: 1fr;
+    }
+}
+.faqs-section {
+    padding: 4rem 8%;
+    background-color: #ffffff;
+}
+
+.faqs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.faq-item {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #2e7d32;
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.faq-item h3 i {
+    color: #2e7d32;
+}
+
+.faq-item p {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+/* ==========================================
+   AJUSTES PARA BREAKPOINT MEDIANO (TABLETAS)
+   max-width: 1024px (o el valor que prefieras)
+   ========================================== */
+@media (max-width: 1024px) {
+    
+    /* 1. Barra de Navegación amontonada */
+    .header-container {
+        flex-direction: column; /* Apila logo y menú */
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Permite que el menú baje si no cabe */
+        justify-content: center;
+        gap: 0.8rem;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Un poco más pequeño */
+        padding: 0.3rem 0.5rem;
+    }
+
+    .btn-agendar-header {
+        margin-top: 0.5rem; /* Separa el botón */
+    }
+
+    /* 2. Sección Hero (Inicio) */
+    .hero-container {
+        grid-template-columns: 1fr; /* Apila el texto y la imagen */
+        text-align: center;
+        padding: 2rem 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Muestra la imagen centrada y ajustada */
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 450px; /* Evita que se haga gigante */
+        height: auto;
+        border-radius: 12px;
+    }
+
+    /* 3. Sección Sobre Mí (Imagen Rota y Texto) */
+    .about-container {
+        grid-template-columns: 1fr; /* Apila imagen y texto */
+        padding: 2rem 5%;
+        text-align: center;
+    }
+
+    .about-image {
+        order: -1; /* Pone la imagen rota arriba */
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    /* === Opción para ocultar la imagen rota temporalmente === */
+    /*
+    .about-image img {
+        display: none;
+    }
+    */
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    /* 4. Sección Especialidades (Tarjetas) */
+    .specialty-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas arriba */
+        gap: 1.5rem;
+    }
+
+    .specialty-block.full-width-block {
+        grid-column: span 2; /* Tarjeta inferior ocupa todo */
+    }
+
+    /* 5. Sección FAQs */
+    .faqs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+/* Pega esto al final de tu styles.css */
+@media (max-width: 1024px) {
+    /* Forzar a cualquier contenedor dentro del header a apilarse al centro */
+    header, 
+    header > div, 
+    .header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 0.8rem !important;
+        width: 100% !important;
+        padding: 0.8rem 1rem !important;
+    }
+
+    /* Ajuste del nombre/logo */
+    header a, 
+    header .logo, 
+    header h1 {
+        white-space: nowrap !important;
+    }
+
+    /* Acomodar los links horizontales centrados abajo del nombre */
+    header nav, 
+    header .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        width: 100% !important;
+    }
+
+    header nav a, 
+    header .nav-links a {
+        font-size: 0.85rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+
+    /* Botón Agendar Cita centrado */
+    header button, 
+    header .btn-agendar, 
+    header a[class*="btn"] {
+        display: inline-block !important;
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.8rem !important;
+        margin-top: 0.2rem !important;
+    }
+}
+/* Estilos para la cédula en el Footer */
+.footer-credentials {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #666666; /* Tono neutro suave */
+}
+
+.cedula-footer {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    letter-spacing: 0.5px;
+}
