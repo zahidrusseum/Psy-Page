@@ -2199,3 +2199,24 @@ header {
         margin-right: 0 !important;
     }
 }
+/* ============================================================
+   DINAMISMO: FADE-IN AL SCROLL + HOVER EN CARDS
+   ============================================================ */
+.specialty-block,
+.faq-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.specialty-block.is-visible,
+.faq-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.specialty-block:hover,
+.faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}

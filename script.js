@@ -63,3 +63,38 @@ function cambiarTab(evt, tabId) {
     document.getElementById(tabId).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
+// Fade-in al hacer scroll
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.specialty-block, .faq-item').forEach(el => {
+    fadeObserver.observe(el);
+});
+// Contador animado del badge de experiencia
+const expNumber = document.querySelector('.exp-number');
+
+if (expNumber) {
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let count = 0;
+                const target = 20;
+                const interval = setInterval(() => {
+                    count++;
+                    expNumber.textContent = '+' + count;
+                    if (count >= target) {
+                        clearInterval(interval);
+                    }
+                }, 60);
+                counterObserver.unobserve(expNumber);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counterObserver.observe(expNumber);
+}
