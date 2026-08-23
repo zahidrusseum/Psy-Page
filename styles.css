@@ -202,7 +202,7 @@ header {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
     background-color: #1e40af;
     color: #ffffff;
     padding: 0.8rem 1.5rem;
