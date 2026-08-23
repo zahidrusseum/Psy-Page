@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const correo = document.getElementById('correo').value.trim();
             const mensaje = document.getElementById('mensaje').value.trim();
 
-            // Número telefónico de WhatsApp (reemplazar por el número real con código de país)
-            const numeroTelefono = '528100000000';
+            // Número telefónico de WhatsApp
+            const numeroTelefono = '528123308504'; // 
 
             // Estructurar el mensaje para WhatsApp
             const textoWhatsApp = `Hola Lic. Nelly Sánchez, mi nombre es *${nombre}*.\n\n` +
@@ -50,3 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+function cambiarTab(evt, tabId) {
+    // Ocultar todo el contenido de las pestañas
+    const contents = document.querySelectorAll(".tab-content");
+    contents.forEach(content => content.classList.remove("active"));
+
+    // Quitar la clase 'active' de todos los botones
+    const buttons = document.querySelectorAll(".tab-btn");
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    // Mostrar la pestaña seleccionada y activar su botón
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}

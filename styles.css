@@ -10,16 +10,26 @@ html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-  background-color: #f8f9fa;
-  color: #2c3e50;
+    background: radial-gradient(circle at 50% 0%, #f8fafc 0%, #cbd5e1 100%) !important;
+    background-attachment: fixed !important;
+}
+/* Cambiar botones verdes por un tono azul pizarra moderno */
+.btn-agendar, .btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
 }
 /* 2. ESTILOS DEL HEADER (NAVBAR) */
+/* ============================================================
+   FORZAR TRANSPARENCIA EN TODAS LAS SECCIONES Y CONTENEDORES
+   ============================================================ */
+section, main, article, div[class*="container"], div[class*="section"] {
+    background-color: transparent !important;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 3%;
-    background-color: #ffffff;
+    background-color: #e2e8f0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
@@ -29,7 +39,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #ffffff;
+    background-color: #e2e8f0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para separar del fondo */
 }
 .logo h2 {
@@ -53,11 +63,11 @@ header {
     transition: color 0.2s ease;
 }
 .nav-links a:hover {
-    color: #2e7d32;
+    color: #1e40af;
 }
 /* 3. BOTÓN DESTACADO AGENDAR */
 .btn-agendar {
-    background-color: #2e7d32;
+    background-color: #2563eb;
     color: #ffffff;
     padding: 0.6rem 1.4rem;
     border-radius: 25px;
@@ -67,7 +77,7 @@ header {
     transition: background-color 0.3s ease;
 }
 .btn-agendar:hover {
-    background-color: #1b5e20;
+    background-color: #1e40af;
 }
 /* 4. ADAPTACIÓN RESPONSIVE MEJORADA */
 
@@ -145,12 +155,14 @@ header {
 }
 
 .hero-container {
-    max-width: 1100px;
+    display: flex;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
 }
 
 .hero-text {
@@ -160,7 +172,7 @@ header {
 .badge {
     display: inline-block;
     background-color: #e8f5e9;
-    color: #2e7d32;
+    color: #1e40af;
     padding: 0.4rem 0.9rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -189,7 +201,7 @@ header {
 }
 
 .btn-primary {
-    background-color: #2e7d32;
+    background-color: #1e40af;
     color: #ffffff;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -200,7 +212,7 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: #1b5e20;
+    background-color: #1e40af;
 }
 
 .btn-secondary {
@@ -215,8 +227,8 @@ header {
 }
 
 .btn-secondary:hover {
-    border-color: #2e7d32;
-    color: #2e7d32;
+    border-color: #1e40af;
+    color: #1e40af;
 }
 
 .hero-features {
@@ -284,16 +296,21 @@ header {
 
 .hero-image img {
     width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    max-width: 420px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+    /* Esta técnica usa el color negro como máscara de transparencia */
+    filter: brightness(1) invert(0); 
+    background-color: transparent;
 }
 
 /* Adaptación responsive */
 @media (max-width: 800px) {
     .hero-container {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
         gap: 2rem;
     }
@@ -313,18 +330,12 @@ header {
 }
 
 /* Reglas base para la imagen (puedes dejarlas como estaban) */
-.hero-image img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
+
 
 /* ADAPTACIÓN RESPONSIVE MEJORADA */
 @media (max-width: 800px) {
     .hero-container {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
         gap: 1.5rem; /* Menor separación */
     }
@@ -396,7 +407,7 @@ header {
 }
 
 .badge-sub {
-    color: #2e7d32;
+    color: #1e40af;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -494,7 +505,7 @@ header {
 
 .cred-icon i {
     font-size: 1.2rem;
-    color: #2e7d32;
+    color: #1e40af;
 }
 /* 7. SECCIÓN SERVICIOS */
 .services {
@@ -558,7 +569,7 @@ header {
 
 .service-icon i {
     font-size: 1.3rem;
-    color: #2e7d32;
+    color: #2563eb;
 }
 
 .service-card h3 {
@@ -572,70 +583,50 @@ header {
     color: #64748b;
     line-height: 1.6;
 }
-/* 8. SECCIÓN PREGUNTAS FRECUENTES */
-.faq {
-    padding: 5rem 5%;
-    background-color: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-}
-
-.faq-container {
-    max-width: 1000px;
+/* Aseguramos que el contenedor aproveche el ancho completo */
+.faqs-section, .faqs-container {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.faq-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3.5rem auto;
-}
-
-.faq-header h2 {
-    font-size: 2rem;
-    color: #1a252f;
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.faq-header p {
-    color: #64748b;
-    font-size: 1rem;
-}
-
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 1.8rem;
-}
-
-.faq-item {
-    background-color: #ffffff;
-    padding: 1.8rem;
-    border-radius: 14px;
-    border: 1px solid #e2e8f0;
-}
-
-.faq-item h3 {
-    font-size: 1.05rem;
-    color: #1e293b;
-    margin-bottom: 0.8rem;
+/* Usamos Flexbox para control total de las filas */
+.faqs-grid {
     display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
-.faq-item h3 i {
-    color: #2e7d32;
-    font-size: 1.1rem;
+/* Tarjetas individuales (3 en la primera fila) */
+.faq-item {
+    flex: 1 1 calc(33.333% - 1.5rem); /* Ocupa un tercio del espacio menos el espacio entre tarjetas */
+    min-width: 280px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid #2563eb;
+    box-sizing: border-box;
 }
 
-.faq-item p {
-    font-size: 0.92rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
+/* Las últimas 2 tarjetas (segunda fila centrada y más amplias) */
+.faq-item:nth-child(4),
+.faq-item:nth-child(5) {
+    flex: 1 1 calc(45% - 1.5rem); /* Ocupan casi la mitad cada una */
 }
-
+/* Adaptación responsive para celulares (en pantallas chicas se ven 1 por fila) */
+@media (max-width: 900px) {
+    .faqs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-item,
+    .faq-item:nth-child(4),
+    .faq-item:nth-child(5) {
+        grid-column: span 1;
+    }
+}
 /* Ajuste pantalla chica */
 @media (max-width: 600px) {
     .faq-grid {
@@ -699,7 +690,7 @@ header {
 
 .contact-icon i {
     font-size: 1.2rem;
-    color: #2e7d32;
+    color: #2563eb;
 }
 
 .contact-card strong {
@@ -772,7 +763,7 @@ header {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #2e7d32;
+    border-color: #2563eb;
 }
 
 .btn-submit {
@@ -842,7 +833,7 @@ header {
     position: absolute;
     bottom: -20px;
     right: 10px;
-    background-color: #2e7d32;
+    background-color: #2563eb;
     color: #ffffff;
     padding: 1rem 1.5rem;
     border-radius: 12px;
@@ -873,7 +864,7 @@ header {
 .about-lead {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2e7d32;
+    color: #2563eb;
     margin-bottom: 1rem;
 }
 
@@ -898,12 +889,12 @@ header {
     background-color: #f8f9fa;
     padding: 1rem;
     border-radius: 10px;
-    border-left: 4px solid #2e7d32;
+    border-left: 4px solid #2563eb;
 }
 
 .cred-icon {
     background-color: #e8f5e9;
-    color: #2e7d32;
+    color: #2563eb;
     width: 40px;
     height: 40px;
     border-radius: 8px;
@@ -976,7 +967,7 @@ header {
 }
 
 .specialty-block h3 i {
-    color: #2e7d32;
+    color: #2563eb;
 }
 
 /* Enfoque Terapéutico */
@@ -996,7 +987,7 @@ header {
 }
 
 .tag-list-check li i {
-    color: #2e7d32;
+    color: #2563eb;
 }
 
 /* Tipos de Consulta */
@@ -1015,7 +1006,7 @@ header {
 
 .consult-type-list li i {
     font-size: 1.2rem;
-    color: #2e7d32;
+    color: #2563eb;
     margin-top: 0.2rem;
 }
 
@@ -1048,7 +1039,7 @@ header {
 
 .badge-patient {
     background-color: #e8f5e9;
-    color: #2e7d32;
+    color: #2563eb;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -1077,8 +1068,8 @@ header {
 }
 
 .tag-condition:hover {
-    border-color: #2e7d32;
-    color: #2e7d32;
+    border-color: #2563eb;
+    color: #2563eb;
     background-color: #f1f8e9;
 }
 .specialty-container {
@@ -1113,7 +1104,7 @@ header {
     border-radius: 12px;
     padding: 1.5rem;
     border: 1px solid #e9ecef;
-    border-left: 4px solid #2e7d32;
+    border-left: 4px solid #2563eb;
 }
 
 .faq-item h3 {
@@ -1126,7 +1117,7 @@ header {
 }
 
 .faq-item h3 i {
-    color: #2e7d32;
+    color: #2563eb;
 }
 
 .faq-item p {
@@ -1167,6 +1158,8 @@ header {
 
     /* 2. Sección Hero (Inicio) */
     .hero-container {
+        display: flex;
+        flex-direction: row; /* Apila el texto y la imagen */
         grid-template-columns: 1fr; /* Apila el texto y la imagen */
         text-align: center;
         padding: 2rem 5%;
@@ -1242,7 +1235,7 @@ header {
         text-align: center !important;
         gap: 0.8rem !important;
         width: 100% !important;
-        padding: 0.8rem 1rem !important;
+        padding: 0.8rem 1rem ;
     }
 
     /* Ajuste del nombre/logo */
@@ -1287,10 +1280,655 @@ header {
     font-size: 0.85rem;
     color: #666666; /* Tono neutro suave */
 }
+/* ============================================================
+   ESTILOS PARA LAS PESTAÑAS Y TARJETAS TIPO DOCTORALIA
+   ============================================================ */
+.consultorios-section {
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.consultorios-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+}
+
+/* Botones de pestañas */
+.tabs-header {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    color: #64748b;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #2563eb;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 3px 3px 0 0;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.card-consultorio-interior {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.info-detalles h3 {
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.info-detalles p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Tarjeta miniatura del mapa */
+.mapa-preview-link {
+    text-decoration: none;
+}
+
+.mapa-placeholder-mini {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: #334155;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.mapa-placeholder-mini:hover {
+    background: #f1f5f9;
+    border-color: #2563eb;
+}
+
+.mapa-placeholder-mini i {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+/* Botón estilo Doctoralia */
+.btn-doctoralia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    padding: 0.85rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-doctoralia:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-20px); /* o -2px si prefieres sutileza */
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 .cedula-footer {
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.2rem;
     letter-spacing: 0.5px;
+}
+/* ============================================================
+   ESTILOS DE UBICACIÓN MODERNA (TÍTULO IZQUIERDA + MAPA AMPLIO)
+   ============================================================ */
+.ubicacion-moderna {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Encabezado cargado a la izquierda */
+.ubicacion-header-left {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.ubicacion-titulo {
+    font-size: 2.2rem;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.ubicacion-sub {
+    font-size: 1.05rem;
+    color: #64748b;
+}
+
+/* Contenedor del mapa a lo ancho con esquinas redondeadas modernas */
+.mapa-full-width {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.mapa-full-width iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+}
+
+/* Tarjeta flotante moderna sobre el mapa (estilo apps de mapas/inmobiliarias) */
+.mapa-card-flotante {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 280px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.texto-flotante h4 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 0.1rem;
+}
+
+.texto-flotante p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-flotante-agendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-flotante-agendar:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Responsivo para pantallas pequeñas (oculta la tarjeta flotante si es móvil muy chico para no estorbar el mapa) */
+@media (max-width: 768px) {
+    .mapa-card-flotante {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        max-width: 100%;
+        border-radius: 0 0 20px 20px;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #e2e8f0;
+    }
+}
+/* ============================================================
+   ESTILOS DE UBICACIÓN MODERNA (TÍTULO IZQUIERDA + MAPA AMPLIO)
+   ============================================================ */
+.ubicacion-moderna {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Encabezado cargado a la izquierda */
+.ubicacion-header-left {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.ubicacion-titulo {
+    font-size: 2.2rem;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.ubicacion-sub {
+    font-size: 1.05rem;
+    color: #64748b;
+}
+
+/* Contenedor del mapa a lo ancho con esquinas redondeadas modernas */
+.mapa-full-width {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.mapa-full-width iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+}
+
+/* Tarjeta flotante moderna sobre el mapa (estilo apps de mapas/inmobiliarias) */
+.mapa-card-flotante {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 280px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.texto-flotante h4 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 0.1rem;
+}
+
+.texto-flotante p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-flotante-agendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-flotante-agendar:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Responsivo para pantallas pequeñas (oculta la tarjeta flotante si es móvil muy chico para no estorbar el mapa) */
+@media (max-width: 768px) {
+    .mapa-card-flotante {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        max-width: 100%;
+        border-radius: 0 0 20px 20px;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #e2e8f0;
+    }
+
+}
+/* ============================================================
+   ESTILOS DE UBICACIÓN (DISEÑO LIMPIO Y TIPOGRAFÍA MODERNA)
+   ============================================================ */
+.ubicacion-moderna {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Encabezado con estilo editorial y moderno */
+.ubicacion-header-left {
+    text-align: left;
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+/* Pequeña etiqueta superior tipo "badge" */
+.ubicacion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ubicacion-titulo {
+    font-size: 2.4rem;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+}
+
+.ubicacion-sub {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Mapa elegante a lo ancho con bordes estilizados */
+.mapa-full-width {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.mapa-full-width iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+}
+.hero-image {
+    background: transparent; /* Quita cualquier fondo sólido del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 16px;
+    /* Si quieres que flote sin sombra o con una muy suave */
+    box-shadow: none; 
+}
+/* ============================================================
+   BOTÓN FLOTANTE DE WHATSAPP (INFERIOR IZQUIERDA)
+   ============================================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float i {
+    font-size: 1.5rem;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 14px;
+        border-radius: 50%;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+/* FIX DEFINITIVO PARA REORDENAR EL HERO */
+@media (min-width: 901px) {
+    .hero-container {
+        display: flex !important;
+        flex-direction: row !important; /* Texto e Imagen lado a lado */
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 2.5rem !important;
+    }
+
+    .hero-text {
+        flex: 1 1 45% !important;
+        max-width: 550px !important;
+        text-align: left !important;
+    }
+
+    .hero-image {
+        flex: 1 1 45% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .hero-image img {
+        width: 100% !important;
+        max-width: 420px !important;
+        height: 340px !important;
+        object-fit: cover !important;
+        border-radius: 20px !important;
+    }
+
+    /* Hace que los 3 bloques de abajo abarquen todo el ancho inferior */
+    .hero-features {
+        flex: 1 0 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+}
+/* MEJORAS ESTÉTICAS PARA LA IMAGEN DEL HERO */
+.hero-image {
+    position: relative;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.hero-image img {
+    width: 100% !important;
+    max-width: 440px !important;
+    height: 360px !important;
+    object-fit: cover !important;
+    border-radius: 24px !important;
+    /* Sombra elegante multinivel */
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.28) !important;
+}
+
+/* Badge decorativo sobre la foto */
+.hero-image-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 10px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.hero-image-badge i {
+    color: #2563eb;
+}
+/* ============================================================
+   RESPONSIVE BREAKPOINT REAL PARA EL HERO
+   ============================================================ */
+
+/* 1. Comportamiento en Celulares / Pantallas Pequeñas (por defecto) */
+.hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem !important;
+    width: 100% !important;
+}
+
+.hero-text {
+    width: 100% !important;
+}
+
+.hero-buttons {
+    justify-content: center !important;
+}
+
+.hero-image {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.hero-image img {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    max-height: 280px !important;
+}
+
+.hero-features {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+}
+
+/* 2. Comportamiento en Pantallas Mayores a 900px (Lado a Lado) */
+@media (min-width: 901px) {
+    .hero-container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 3rem !important;
+    }
+
+    .hero-text {
+        text-align: left !important;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start !important;
+    }
+
+    .hero-image img {
+        max-width: 440px !important;
+        height: 350px !important;
+    }
+
+    .hero-features {
+        grid-column: span 2 !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+}
+/* AJUSTE DE ESPACIADOS PARA VISTA MÓVIL */
+@media (max-width: 900px) {
+    /* Reduce el relleno interno del Hero */
+    .hero {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Reduce el margen inferior de las tarjetas de características */
+    .hero-features {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1rem !important;
+        gap: 0.75rem !important; /* Espacio más compacto entre cajitas */
+    }
+
+    /* Compacta el inicio de la siguiente sección (Sobre mí) */
+    #about, .about-section {
+        padding-top: 2rem !important;
+        margin-top: 0 !important;
+    }
 }
