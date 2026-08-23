@@ -1214,7 +1214,8 @@ header {
     }
 
     .specialty-block.full-width-block {
-        grid-column: span 2; /* Tarjeta inferior ocupa todo */
+        grid-column: span 2;
+          min-width: 0; /* Tarjeta inferior ocupa todo */
     }
 
     /* 5. Sección FAQs */
