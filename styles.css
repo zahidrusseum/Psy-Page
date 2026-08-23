@@ -1932,3 +1932,90 @@ header {
         margin-top: 0 !important;
     }
 }
+/* ============================================================
+   CORRECCIÓN GLOBAL MÓVIL (PANTALLAS MENORES A 768PX)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* 1. Prevenir Scroll Horizontal Descontrolado */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 2. Ajuste del Header y Menú Navegación */
+    .navbar {
+        flex-direction: column !important;
+        padding: 0.8rem 1rem !important;
+        position: relative !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem 0.8rem !important;
+        font-size: 0.85rem !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    /* 3. Reorganización del Hero y Tipografía */
+    .hero-text h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .hero-buttons a, .btn-primary, .btn-secondary {
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Tarjetas de Características y Grids a 1 Sola Columna */
+    .hero-features, 
+    .faqs-grid, 
+    .grid, 
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+
+    .faq-item, 
+    .feature-card, 
+    .faq-item:nth-child(4), 
+    .faq-item:nth-child(5) {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. Imágenes e Iframes Ajustados */
+    .hero-image img, 
+    .doctoralia-card, 
+    iframe, 
+    .mapa-full-width {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. Corrección de Botón y Cajas Desbordadas */
+    div, section, button {
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+}
