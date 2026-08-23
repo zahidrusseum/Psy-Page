@@ -149,8 +149,9 @@ header {
     }
 }
 /* 5. HERO SECTION */
+
 .hero {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f8faff 0%, #eef4fb 50%, #f5f0fb 100%);
     padding: 3rem 5%;
 }
 
@@ -201,6 +202,7 @@ header {
 }
 
 .btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)
     background-color: #1e40af;
     color: #ffffff;
     padding: 0.8rem 1.5rem;
@@ -2227,3 +2229,29 @@ header {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
+/* ============================================================
+   ANIMACIÓN DE ENTRADA AL CARGAR (HEADER + HERO)
+   ============================================================ */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation: fadeSlideIn 0.7s ease forwards;
+}
+
+.hero-container > * {
+    opacity: 0;
+    animation: fadeSlideIn 0.7s ease forwards;
+}
+
+.hero-container > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-container > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-container > *:nth-child(3) { animation-delay: 0.4s; }
