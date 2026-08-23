@@ -1082,11 +1082,6 @@ header {
     grid-column: 1 / -1;
 }
 
-@media (max-width: 900px) {
-    .specialty-container {
-        grid-template-columns: 1fr;
-    }
-}
 .faqs-section {
     padding: 4rem 8%;
     background-color: #ffffff;
@@ -1221,6 +1216,11 @@ header {
     /* 5. Sección FAQs */
     .faqs-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+@media (max-width: 900px) {
+    .specialty-container {
+        grid-template-columns: 1fr;
     }
 }
 /* Pega esto al final de tu styles.css */
