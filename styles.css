@@ -2104,3 +2104,85 @@ header {
         box-sizing: border-box !important;
     }
 }
+/* ============================================================
+   1. FAQS EN FORMATO 3 ARRIBA Y 2 ABAJO (ESCRITORIO / TAB)
+   ============================================================ */
+@media screen and (min-width: 769px) {
+    .faqs-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Las tarjetas 4 y 5 se acomodan en la segunda fila ocupando espacio centrado */
+    .faq-item:nth-child(4) {
+        grid-column: 1 / span 1 !important;
+        margin-left: 50% !important; /* Desplaza para centrar el bloque de 2 */
+        width: 100% !important;
+    }
+
+    .faq-item:nth-child(5) {
+        grid-column: 2 / span 1 !important;
+        margin-left: 50% !important;
+        width: 100% !important;
+    }
+}
+
+/* Alternative limpia para 3 y 2 si usas Flexbox en FAQs */
+@media screen and (min-width: 769px) {
+    .faqs-container-flex {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .faqs-container-flex .faq-item {
+        flex: 1 1 calc(33.333% - 1.5rem) !important; /* 3 por fila */
+        max-width: calc(33.333% - 1.5rem) !important;
+    }
+
+    .faqs-container-flex .faq-item:nth-child(4),
+    .faqs-container-flex .faq-item:nth-child(5) {
+        flex: 1 1 calc(40% - 1.5rem) !important; /* Mas anchas abajo */
+        max-width: calc(40% - 1.5rem) !important;
+    }
+}
+
+/* ============================================================
+   2. CORRECCIÓN ESTRICTA DE SERVICIOS Y MÓVIL
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+    /* Forzar a 1 sola columna en Móvil para EVITAR desbordamientos */
+    #servicios, 
+    .services-section,
+    .services-grid,
+    .especialidad-grid,
+    .grid-servicios,
+    div[class*="servicio"],
+    div[class*="grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    /* Ajuste de tarjetas en celular */
+    .service-card, 
+    .card, 
+    .faq-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
