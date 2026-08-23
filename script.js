@@ -72,7 +72,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.specialty-block, .faq-item').forEach(el => {
+document.querySelectorAll(' .contact-container,.specialty-block, .faq-item').forEach(el => {
     fadeObserver.observe(el);
 });
 // Contador animado del badge de experiencia
