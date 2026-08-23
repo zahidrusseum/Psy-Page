@@ -539,7 +539,7 @@ header {
 
 .services-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(250px, 1fr);
     gap: 2rem;
 }
 
@@ -1209,7 +1209,7 @@ header {
 
     /* 4. Sección Especialidades (Tarjetas) */
     .specialty-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas arriba */
+        grid-template-columns: repeat(2, minmax (0, 1fr)); /* 2 columnas arriba */
         gap: 1.5rem;
     }
 
